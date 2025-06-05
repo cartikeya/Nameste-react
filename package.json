@@ -1,0 +1,29 @@
+{
+  "name": "nameste-react",
+  "version": "1.0.0",
+  "description": "this is basic project",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cartikeya/Nameste-react.git"
+  },
+  "author": "cartikeya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cartikeya/Nameste-react/issues"
+  },
+  "homepage": "https://github.com/cartikeya/Nameste-react#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
