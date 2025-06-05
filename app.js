@@ -1,13 +1,4 @@
-/*
-div
-    div 
-        h1
-    div
-div
 
-
-*
-*/
 
 const heading  = React.createElement(
     "div",
