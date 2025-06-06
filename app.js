@@ -1,28 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ReactDOM from "react-dom/client";
 
-const heading  = React.createElement(
-    "div",
-    { id: "parent" },
-    [
-        React.createElement(
-        "div",
-        { id: "child" },
-        [
-            React.createElement("h1",{},"Hi I am cartikeya"),
-            React.createElement("h2",{},"Hi I am h2 tag")
-        ]),
-        React.createElement(
-        "div",
-        { id: "child" },
-        [
-            React.createElement("h1",{},"Hi I am h1 tag"),
-            React.createElement("h2",{},"Hi I am h2 tag")
-        ])
-    ]
+
+const a =100;
+const Component = () => <h1>hello there</h1>;
+
+const Nested = () => (
+    <div className="title">
+        <h1>this is h1{a}</h1>
+        <h2>this is h1</h2>
+        <h3>this is h1</h3>
+        <Component/>
+    </div>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-        
-root.render(heading)
+
+root.render(<Nested/>);
