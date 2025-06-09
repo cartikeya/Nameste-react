@@ -1,3 +1,61 @@
-#heading{
-    color: red;
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+}   
+.logo {
+    width: 100px;
 }
+
+
+
+.nav-items > ul {
+    display: flex;
+    /* margin: 0px 10px; */
+    
+}
+.nav-items > ul > li {
+    cursor: pointer;
+    padding: 0px 25px;
+    font-size: 24px;
+    list-style-type: none;
+}
+.res-container {
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+
+}
+
+.res-card {
+    border: 1px solid black;
+    width: 240px;
+    
+    padding: 5px;
+    background-color: aliceblue;
+    margin: 5px;
+    
+}
+.res-card:hover {
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.res-card .res-logo {
+    width: 100%;
+    
+}
+.search{
+    padding: 0px 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+
