@@ -20,7 +20,7 @@ const Body = () => {
 
     console.log(json);
     const restaurantCards = json.data.cards.filter(
-       (card) => card?.card?.card?.info
+      (card) => card?.card?.card?.info
     );
     setListofRestaurants(restaurantCards);
     setfil(restaurantCards);
@@ -56,12 +56,13 @@ const Body = () => {
         <button
           className="click-btn"
           onClick={() => {
-            console.log("button clicked");
+            // console.log("button clicked");
             let filteredList = ListofRestaurants.filter(
-              (res) => res.card.card.info.avgRating >= 4.0
+              (res1) => res1.card.card.info.avgRating > 4.0
             );
             setListofRestaurants(filteredList);
-            // console.log(ListofRestaurants)
+            console.log(filteredList);
+            console.log(ListofRestaurants);
           }}
         >
           click to filter
