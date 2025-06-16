@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import RestaurentCard from "./RestaurentCard";
-
+import { Link } from "react-router";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
@@ -14,14 +14,18 @@ const Body = () => {
 
   const fetchData = async () => {
     const Data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.30070&lng=80.46390&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6868159&lng=83.2184815&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await Data.json();
 
     console.log(json);
-    const restaurantCards = json.data.cards.filter(
-      (card) => card?.card?.card?.info
-    );
+
+    const restaurantCards =
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+    // const restaurantCards = json.data.cards.filter(
+    //   (card) => card?.card?.card?.info
+    // );
+    console.log(restaurantCards);
     setListofRestaurants(restaurantCards);
     setfil(restaurantCards);
   };
@@ -69,11 +73,13 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {fil.map((restaurent, index) => (
-          <RestaurentCard
-            key={restaurent?.card?.card?.info?.id}
-            resData={restaurent}
-          />
+        {fil.map((restaurant, index) => (
+          <Link
+            key={restaurant?.info?.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurentCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
