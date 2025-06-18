@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 const ResMenu = (props) => {
   const [resInfo, setresInfo] = useState();
+  const [showMenu, setshowMenu] = useState(false);
 
   const { resID } = useParams();
   console.log(resID);
@@ -39,10 +40,75 @@ const ResMenu = (props) => {
       <h2>{resInfo?.cards[2]?.card?.card?.info?.name}</h2>
       <h1>{resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage}</h1>
       <h1>{resInfo?.cards[2]?.card?.card?.info?.cuisines.join(", ")}</h1>
-      <h2>crispy burger - price - cuisines</h2>
-      <h3>Menu</h3>
+
+      <h3
+        onClick={() => {
+          setshowMenu(!showMenu);
+        }}
+      >
+        {showMenu ? "🔽" : "▶️"}
+        {
+          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+            ?.card?.title
+        }
+      </h3>
+
+      {showMenu ? (
+        <ul>
+          {resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
+            (item) => (
+              <li key={item.card.info.id}>
+                {item.card.info.name} - Rs.{" "}
+                {item.card.info.price / 100 ||
+                  item.card.info.defaultPrice / 100}
+              </li>
+            )
+          )}
+        </ul>
+      ) : null}
+
+      <h3>
+        {
+          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
+            ?.card?.title
+        }
+      </h3>
       <ul>
-        {resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
+        {resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards?.map(
+          (item) => (
+            <li key={item.card.info.id}>
+              {item.card.info.name} - Rs.{" "}
+              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+            </li>
+          )
+        )}
+      </ul>
+
+      <h3>
+        {
+          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card
+            ?.card?.title
+        }
+      </h3>
+      <ul>
+        {resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards?.map(
+          (item) => (
+            <li key={item.card.info.id}>
+              {item.card.info.name} - Rs.{" "}
+              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+            </li>
+          )
+        )}
+      </ul>
+
+      <h3>
+        {
+          resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card
+            ?.card?.title
+        }
+      </h3>
+      <ul>
+        {resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card?.itemCards?.map(
           (item) => (
             <li key={item.card.info.id}>
               {item.card.info.name} - Rs.{" "}

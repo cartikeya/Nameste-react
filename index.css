@@ -95,3 +95,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.user-card {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid black;
+}
