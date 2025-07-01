@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+ 
 const User = ({ name, location }) => {
   const [count, setcount] = useState(0);
   const [count2, setcount2] = useState(2);

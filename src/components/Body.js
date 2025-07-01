@@ -77,7 +77,8 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 justify-center">
+        {/* //grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center */}
         {fil.map((restaurant, index) => (
           <Link
             key={restaurant?.info?.id}
